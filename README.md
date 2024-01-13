@@ -6,14 +6,13 @@ This repository contains a simple AutoClicker script written in Python using the
 Before using this AutoClicker, make sure to install the required dependencies. You can install them using the following command:
 
 bash
-Copy code
-pip install pynput
-Usage
+```pip install pynput```
+## Usage
 Run the script by executing the following command in your terminal:
 
 bash
-Copy code
-python autoclicker.py
+```py [script path]```
+
 Press the designated start/stop key to toggle the AutoClicker on and off. By default, the start/stop key is set to $.
 
 Press the exit key to stop the AutoClicker and exit the program. By default, the exit key is set to F14.
