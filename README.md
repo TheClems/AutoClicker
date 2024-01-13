@@ -1,6 +1,6 @@
 # AutoClicker in Python
 ## Introduction
-This repository contains a simple AutoClicker script written in Python using the pynput library. The AutoClicker is designed to simulate mouse clicks at a specified delay interval. Feel free to customize the script according to your needs.
+This repository contains a simple AutoClicker script written in Python using the pynput library. The AutoClicker is designed to simulate mouse clicks or any keyboard key at a specified delay interval. Feel free to customize the script according to your needs.
 
 ## Installation
 Before using this AutoClicker, make sure to install the required dependencies. You can install them using the following command:
