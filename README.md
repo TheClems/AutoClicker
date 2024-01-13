@@ -34,14 +34,14 @@ _By default, the delay is set to 0.001 sec._
 
 To change it, change the value of the delay variable in the script, here it is `0.001`.
 
-`button = Button.left`
+`delay = 0.001`
 
 ### Button
 _By default, the button is set to left mouse button._
 
 To change it, change the value of the button variable in the script, here it is `Button.left`.
 
-```delay = 0.001```
+`button = Button.left`
 
 ## Disclaimer
 * This AutoClicker is intended for educational purposes only and should not be used for any form of cheating or unethical activities. Please use this tool responsibly and in compliance with the terms of service of the applications or games you interact with.
