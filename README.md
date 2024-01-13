@@ -30,7 +30,11 @@ To change it, change the value of the exit_key variable in the script, here it i
 ```exit_key = KeyCode(char='£')```
 
 ### Delay between clicks
+_By default, the delay is set to 0.001._
 
+To change it, change the value of the delay variable in the script, here it is '0.001'.
+
+```delay = 0.001```
 
 ## Disclaimer
 * This AutoClicker is intended for educational purposes only and should not be used for any form of cheating or unethical activities. Please use this tool responsibly and in compliance with the terms of service of the applications or games you interact with.
