@@ -5,34 +5,41 @@ This repository contains a simple AutoClicker script written in Python using the
 ## Installation
 Before using this AutoClicker, make sure to install the required dependencies. You can install them using the following command:
 
-```pip install pynput```
+`pip install pynput`
 ## Usage
 Run the script by executing the following command in your terminal:
 
-```py [script path]```
+`py [script path]`
 
 ### Start / Stop
 **Press the designated start/stop key to toggle the AutoClicker on and off.**
 
 _By default, the start/stop key is set to $._
 
-To change it, change the value of the start_stop_key variable in the script, here it is '$'.
+To change it, change the value of the start_stop_key variable in the script, here it is `$`.
 
-```start_stop_key = KeyCode(char='$')```
+`start_stop_key = KeyCode(char='$')`
 
 ### Exit
 **Press the exit key to stop the AutoClicker and exit the program.**
 
 _By default, the exit key is set to £._
 
-To change it, change the value of the exit_key variable in the script, here it is '£'.
+To change it, change the value of the exit_key variable in the script, here it is `£`.
 
-```exit_key = KeyCode(char='£')```
+`exit_key = KeyCode(char='£')`
 
 ### Delay between clicks
-_By default, the delay is set to 0.001._
+_By default, the delay is set to 0.001 sec._
 
-To change it, change the value of the delay variable in the script, here it is '0.001'.
+To change it, change the value of the delay variable in the script, here it is `0.001`.
+
+`button = Button.left`
+
+### Button
+_By default, the button is set to left mouse button._
+
+To change it, change the value of the button variable in the script, here it is `Button.left`.
 
 ```delay = 0.001```
 
