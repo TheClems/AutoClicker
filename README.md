@@ -10,15 +10,27 @@ Before using this AutoClicker, make sure to install the required dependencies. Y
 Run the script by executing the following command in your terminal:
 
 ```py [script path]```
-### Start
-Press the designated start/stop key to toggle the AutoClicker on and off.
+
+### Start / Stop
+**Press the designated start/stop key to toggle the AutoClicker on and off.**
 
 _By default, the start/stop key is set to $._
 
-### Stop
-Press the exit key to stop the AutoClicker and exit the program.
+To change it, change the value of the start_stop_key variable in the script, here it is '$'.
+
+```start_stop_key = KeyCode(char='$')```
+
+### Exit
+**Press the exit key to stop the AutoClicker and exit the program.**
 
 _By default, the exit key is set to £._
+
+To change it, change the value of the exit_key variable in the script, here it is '£'.
+
+```exit_key = KeyCode(char='£')```
+
+### Delay between clicks
+
 
 ## Disclaimer
 * This AutoClicker is intended for educational purposes only and should not be used for any form of cheating or unethical activities. Please use this tool responsibly and in compliance with the terms of service of the applications or games you interact with.
