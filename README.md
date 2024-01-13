@@ -10,9 +10,12 @@ Before using this AutoClicker, make sure to install the required dependencies. Y
 Run the script by executing the following command in your terminal:
 
 ```py [script path]```
+### Start
+Press the designated start/stop key to toggle the AutoClicker on and off.
 
-Press the designated start/stop key to toggle the AutoClicker on and off. By default, the start/stop key is set to $.
+_By default, the start/stop key is set to $._
 
+### Stop
 Press the exit key to stop the AutoClicker and exit the program. By default, the exit key is set to F14.
 
 ## Disclaimer
