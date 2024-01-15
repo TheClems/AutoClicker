@@ -17,23 +17,30 @@ class ClickMouse(threading.Thread):
         self.button = button
         self.running = False
         self.program_running = True
+        self.condition = threading.Condition()
 
     def start_clicking(self):
-        self.running = True
+        with self.condition:
+            self.running = True
+            self.condition.notify()
 
     def stop_clicking(self):
-        self.running = False
+        with self.condition:
+            self.running = False
 
     def exit(self):
-        self.stop_clicking()
-        self.program_running = False
+        with self.condition:
+            self.stop_clicking()
+            self.program_running = False
+            self.condition.notify()
 
     def run(self):
-        while self.program_running:
-            while self.running:
+        while True:
+            with self.condition:
+                while not self.running:
+                    self.condition.wait()
                 mouse.click(self.button)
-                time.sleep(self.delay)
-            time.sleep(0.1)
+                self.condition.wait(self.delay)
 
 
 mouse = Controller()
