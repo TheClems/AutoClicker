@@ -4,10 +4,10 @@ from pynput.mouse import Button, Controller
 from pynput.keyboard import Listener, KeyCode
 
 # Configuration
-start_stop_key = KeyCode(char='$')
-exit_key = KeyCode(char='£')
-delay = 0.001
-button = Button.left
+START_STOP_KEY = KeyCode(char='$')
+EXIT_KEY = KeyCode(char='£')
+DELAY = 0.001
+BUTTON = Button.left
 
 class ClickMouse(threading.Thread):
     def __init__(self, delay, button):
@@ -16,43 +16,38 @@ class ClickMouse(threading.Thread):
         self.button = button
         self.running = False
         self.program_running = True
-        self.condition = threading.Condition()
+        self.event = threading.Event()
 
     def start_clicking(self):
-        with self.condition:
-            self.running = True
-            self.condition.notify()
+        self.running = True
+        self.event.set()
 
     def stop_clicking(self):
-        with self.condition:
-            self.running = False
+        self.running = False
 
     def exit(self):
-        with self.condition:
-            self.stop_clicking()
-            self.program_running = False
-            self.condition.notify()
+        self.stop_clicking()
+        self.program_running = False
+        self.event.set()
 
     def run(self):
         while self.program_running:
-            with self.condition:
-                while not self.running and self.program_running:
-                    self.condition.wait()
-                if self.running:
-                    mouse.click(self.button)
-                self.condition.wait(self.delay)
+            self.event.wait()
+            if self.running:
+                mouse.click(self.button)
+            time.sleep(self.delay)
 
 mouse = Controller()
-click_thread = ClickMouse(delay, button)
+click_thread = ClickMouse(DELAY, BUTTON)
 click_thread.start()
 
 def on_press(key):
-    if key == start_stop_key:
+    if key == START_STOP_KEY:
         if click_thread.running:
             click_thread.stop_clicking()
         else:
             click_thread.start_clicking()
-    elif key == exit_key:
+    elif key == EXIT_KEY:
         click_thread.exit()
         listener.stop()
 
